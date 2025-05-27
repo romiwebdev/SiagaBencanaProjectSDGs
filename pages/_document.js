@@ -21,7 +21,8 @@ export default function Document() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="SiagaBencanaBojonegoro" />
         <meta name="twitter:description" content="Web GIS bencana untuk monitoring dan laporan di Kabupaten Bojonegoro, mendukung SDGs." />
-        <meta name="twitter:image" content="/twitter-image.jpg" /> {/* Ubah sesuai file */}
+        <meta name="twitter:image" content="/twitter-image.jpg" /> 
+        <meta name="google-site-verification" content="CC6bjZ45EFPO-vkaeJE8sfjrf5umq-IyAiSuhYUyfpc" />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -32,7 +33,6 @@ export default function Document() {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2563eb" />
         <meta name="msapplication-TileColor" content="#2563eb" />
         <meta name="theme-color" content="#2563eb" />
-        <meta name="google-site-verification" content="CC6bjZ45EFPO-vkaeJE8sfjrf5umq-IyAiSuhYUyfpc" />
         
         {/* Tailwind Config Inline */}
         <script src="https://cdn.tailwindcss.com"></script>
