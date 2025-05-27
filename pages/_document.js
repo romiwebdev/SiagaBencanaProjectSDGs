@@ -33,7 +33,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#2563eb" />
         <meta name="theme-color" content="#2563eb" />
         <meta name="google-site-verification" content="CC6bjZ45EFPO-vkaeJE8sfjrf5umq-IyAiSuhYUyfpc" />
-
+        
         {/* Tailwind Config Inline */}
         <script src="https://cdn.tailwindcss.com"></script>
         <script
