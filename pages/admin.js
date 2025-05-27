@@ -15,7 +15,9 @@ export default function Admin() {
   useEffect(() => {
     const checkAccess = async () => {
       const { data: { user } } = await supabase.auth.getUser();
-      if (!user || user.email !== 'rominmuh230@gmail.com') {
+      const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+
+      if (!user || user.email !== adminEmail) {
         router.push('/');
       }
     };
