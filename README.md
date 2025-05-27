@@ -1,40 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🌍 SiagaBencanaBojonegoro
 
-## Getting Started
+**SiagaBencanaBojonegoro** adalah aplikasi web berbasis **Next.js** dan **Tailwind CSS** yang dirancang untuk mendukung _Sustainable Development Goals (SDGs)_, khususnya dalam hal **monitoring dan kesiapsiagaan bencana** di Kabupaten Bojonegoro, Jawa Timur.
 
-First, run the development server:
+> Aplikasi ini menampilkan Web GIS interaktif, laporan bencana dari masyarakat, dan dashboard statistik untuk membantu tanggap darurat berbasis data.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Tech Stack
+
+- **Next.js** (Pages Router, tanpa folder `src/`)
+- **Tailwind CSS** (via CDN injection)
+- **Leaflet.js** + **OpenStreetMap** (untuk peta interaktif)
+- **Supabase** (untuk autentikasi Google & manajemen user)
+- **Google Cloud Console** (OAuth2.0)
+- **CSV lokal** (sebagai dummy data)
+
+---
+
+## 📦 Fitur Utama
+
+### ✅ Beranda (`/`)
+- Peta interaktif dengan **Leaflet.js**
+- Marker tiap **kecamatan di Bojonegoro**
+- Warna marker sesuai tingkat dampak (semakin merah = semakin parah)
+- Popup info: jumlah desa terdampak **banjir, gempa, longsor**
+
+### ✅ Laporkan Bencana (`/laporkan`)
+- Form laporan bencana (pilih kecamatan, jenis bencana, deskripsi, upload foto)
+- Waktu tercatat otomatis
+- Daftar laporan dummy dengan status: `Menunggu`, `Terkonfirmasi`, `Hoax`
+
+### ✅ Dashboard Admin (`/admin`)
+- Statistik laporan dummy (total laporan, status)
+- Tabel manajemen laporan (edit, ubah status, hapus)
+
+---
+
+## 🔐 Akses Admin
+Akses halaman `/admin` dibatasi hanya untuk email yang ditentukan di `.env`:
+
+```env
+NEXT_PUBLIC_ADMIN_EMAIL=youremail@example.com
+````
+
+---
+
+## 🔧 Struktur Proyek
+
+```
+/pages
+  /index.js
+  /laporkan.js
+  /admin.js
+  /auth/callback.js
+  /api
+    /...
+/components
+/data
+/public
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## ⚙️ Instalasi Lokal
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+git clone https://github.com/romiwebdev/SiagaBencanaProjectSDGs.git
+cd SiagaBencanaProjectSDGs
+npm install
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Tambahkan file `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+NEXT_PUBLIC_ADMIN_EMAIL=rominmuh230@gmail.com
+NEXT_PUBLIC_SUPABASE_REDIRECT=http://localhost:3000/auth/callback
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+1. **Push ke GitHub**
+2. **Hubungkan ke [Vercel](https://vercel.com/)**
+3. **Isi environment variables di Vercel sesuai `.env.local`**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🗺️ SEO & Sitemap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Favicon lengkap (semua ukuran) tersedia di `/public`
+* Sitemap dan robots.txt dihasilkan otomatis
+* Meta tag SEO friendly ada di semua halaman utama
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
+
+## ✅ SDGs Goals Yang Didukung
+
+* **Goal 11: Sustainable Cities and Communities**
+* **Goal 13: Climate Action**
+
+---
+
+## 📌 Fokus Wilayah
+
+**Kabupaten Bojonegoro, Jawa Timur – Indonesia**
+
+---
+
+## 📄 Lisensi
+
+MIT License © 2025 - romiwebdev
+
+---
+
+## 📣 Kontribusi
+
+Pull Request terbuka! Silakan fork repo ini dan ajukan PR jika ingin membantu mengembangkan fitur lebih lanjut.
+
+```
+
